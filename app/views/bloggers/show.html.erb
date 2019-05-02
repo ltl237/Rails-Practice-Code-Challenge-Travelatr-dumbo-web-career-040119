@@ -1,0 +1,22 @@
+<h1>Hi, <%= @blogger.name%></h1>
+
+<%= button_to "Delete Blogger", @blogger, method: :delete %>
+
+<h3>Age: <%= @blogger.age %></h3>
+<div>
+	<p><%= @blogger.bio %></p>
+</div>
+
+<p>Total post likes: <%= @blogger.posts.sum(:likes)%></p>
+<%= link_to "Most Liked Post", @post_with_most_likes %>
+
+<h3>List of all of <%= @blogger.name%>'s Posts:</h3>
+
+<ul>
+	<% @blogger.posts.each do |post| %>
+	<li>
+		<%= link_to post.title, post_path %>
+		-<%= post.likes %>
+	</li>
+	<% end %>
+</ul>

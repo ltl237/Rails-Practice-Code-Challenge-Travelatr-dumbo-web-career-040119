@@ -1,0 +1,24 @@
+<h1>Here is a page for <%=@destination.name%></h1>
+<h3>Average Age for <%= @destination.name%> <%= @avg_age%></h3>
+
+<h3>Posts about this destination</h3>
+<!-- <ul>
+	<% @destination.posts.each do |post| %>
+	<li>
+		<%= link_to post.title, post_path %> 
+		<br>Create Time: <%= post.created_at%>
+	</li>
+	<% end %>
+</ul> -->
+
+
+<ul>
+	<% @last_five_posts.each do |post| %>
+	<li>
+		<%= link_to post.title, post_path %></br>
+		Create Time: <%= post.created_at %>
+	</li>
+	<% end %>
+</ul>
+
+

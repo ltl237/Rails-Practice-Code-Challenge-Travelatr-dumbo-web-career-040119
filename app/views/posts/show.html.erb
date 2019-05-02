@@ -1,0 +1,16 @@
+<h2>Hi this is <%= link_to  @post_blogger.name, @post_blogger %>'s Post</h2>
+<h2>About a trip to <%= @post.destination.name %></h2>
+
+<%= button_to "Edit", edit_post_path, method: :get%>
+
+<h4><%= @post.title %></h4>
+<p><%= @post.content %></p>
+<p>Destination: <%= link_to @post.destination.name, @post.destination %></p>
+
+<p>Likes: <%= @post.likes %>
+
+</p>
+
+<%# button_to "Like", @post, method: :get%>
+<%# button_to "Like", liked_post, method: :get%>
+<%= button_to "Like", liked_post_path, method: :get%>
